@@ -1,0 +1,33 @@
+.section-verify-email {
+  .section-title {
+    margin-bottom: 1rem;
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .section-content {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    -webkit-box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-sm);
+
+    .section-description {
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      color: var(--muted-foreground);
+      text-align: center;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+
+      .email {
+        font-weight: 500;
+      }
+    }
+
+    .return-link {
+      width: 100%;
+    }
+  }
+}

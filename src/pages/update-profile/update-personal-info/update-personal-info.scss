@@ -1,0 +1,62 @@
+@import '../../../styles/mixins.scss';
+
+.section-change-personal-info {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  -webkit-box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm);
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .section-description {
+    color: var(--muted-foreground);
+
+    .current-email {
+      font-weight: 500;
+    }
+  }
+
+  .form-change-personal-info {
+    margin-top: 1.25rem;
+
+    .form-fieldset {
+      display: -ms-grid;
+      display: grid;
+      gap: 1.25rem;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: start;
+
+      @include sm {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+
+        > :last-child {
+          -ms-grid-row: 4;
+          grid-row: 4;
+        }
+      }
+    }
+
+    .form-actions {
+      margin-top: 1.25rem;
+
+      .submit-button {
+        width: 100%;
+
+        @include sm {
+          width: auto;
+        }
+
+        .loading-icon {
+          font-size: 1.375rem;
+        }
+      }
+    }
+  }
+}

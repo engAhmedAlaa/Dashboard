@@ -1,0 +1,66 @@
+@import '../../styles/mixins.scss';
+
+.signin-section {
+  .signin-title {
+    margin-bottom: 1rem;
+    font-size: 1.625rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .signin-content {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    -webkit-box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-sm);
+
+    .signin-form {
+      .signin-fieldset {
+        &:disabled {
+          pointer-events: none;
+        }
+
+        > :not([hidden]) ~ :not([hidden]) {
+          margin-top: 1.25rem;
+        }
+      }
+
+      .signin-button-container {
+        margin-top: 1.25rem;
+
+        .signin-button {
+          width: 100%;
+
+          .loading-icon {
+            font-size: 1.375rem;
+          }
+        }
+      }
+    }
+  }
+
+  .signin-info {
+    margin-top: 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    -webkit-box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-sm);
+
+    .signin-link {
+      color: var(--primary);
+      font-weight: 600;
+      -webkit-transition: color var(--duration);
+      -o-transition: color var(--duration);
+      transition: color var(--duration);
+
+      &:hover {
+        color: var(--primary-hover);
+      }
+    }
+  }
+}

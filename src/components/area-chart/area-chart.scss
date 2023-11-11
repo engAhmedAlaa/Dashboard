@@ -1,0 +1,96 @@
+.section-area-chart {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  -webkit-box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm);
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .section-content {
+    margin-top: 1.25rem;
+    height: 400px;
+
+    .recharts-responsive-container {
+      .recharts-xAxis {
+        .recharts-cartesian-axis-line {
+          stroke: var(--muted-foreground);
+        }
+
+        .recharts-cartesian-axis-tick-value {
+          fill: var(--muted-foreground);
+          font-weight: 500;
+          font-size: 0.8125rem;
+        }
+      }
+
+      .recharts-yAxis {
+        .recharts-cartesian-axis-line {
+          stroke: var(--muted-foreground);
+        }
+
+        .recharts-cartesian-axis-tick-value {
+          fill: var(--muted-foreground);
+          font-weight: 500;
+          font-size: 0.8125rem;
+        }
+      }
+
+      .recharts-tooltip-cursor {
+        stroke: var(--muted-foreground);
+      }
+
+      .recharts-active-dot {
+        .recharts-dot {
+          fill: var(--background);
+          stroke: var(--primary);
+        }
+      }
+
+      .tooltip {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 0.5rem;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: minmax(0, 1fr) 0.5rem minmax(0, 1fr) 0.5rem
+          minmax(0, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5rem;
+        background-color: var(--background);
+        -webkit-box-shadow: var(--shadow-sm);
+        box-shadow: var(--shadow-sm);
+
+        .info-container {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+
+          &:nth-child(2) {
+            color: var(--muted-foreground);
+          }
+
+          .info-name {
+            color: var(--muted-foreground);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+          }
+
+          .info-value {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}

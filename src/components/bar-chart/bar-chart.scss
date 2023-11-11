@@ -1,0 +1,55 @@
+.section-bar-chart {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  -webkit-box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm);
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .section-info {
+    margin-top: 0.25rem;
+    color: var(--muted-foreground);
+    font-size: 0.9375rem;
+  }
+
+  .section-content {
+    margin-top: 1.25rem;
+    height: 250px;
+
+    .recharts-responsive-container {
+      .tooltip {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 0.5rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        background-color: var(--background);
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 0.125rem;
+        -webkit-box-shadow: var(--shadow-sm);
+        box-shadow: var(--shadow-sm);
+
+        .info-name {
+          color: var(--muted-foreground);
+          font-size: 0.7rem;
+          text-transform: uppercase;
+        }
+
+        .info-value {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

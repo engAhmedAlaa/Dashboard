@@ -1,0 +1,133 @@
+@import '../../styles/mixins.scss';
+
+.main-header {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: var(--z-lg);
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
+  -webkit-transition: background-color var(--duration);
+  -o-transition: background-color var(--duration);
+  transition: background-color var(--duration);
+
+  &.initial {
+    background-color: #fffffff2;
+
+    @supports (
+      ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0)))
+    ) {
+      background-color: #fff9;
+    }
+
+    @include dark {
+      background-color: transparent;
+    }
+  }
+
+  &.current {
+    background-color: #ffffff;
+
+    @supports (
+      ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0)))
+    ) {
+      background-color: #fffffff2;
+    }
+
+    @include dark {
+      background-color: #0f172abf;
+    }
+  }
+
+  .container {
+    height: 3.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+
+    @include lg {
+      gap: 2.5rem;
+    }
+
+    .main-logo {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-column-gap: 0.5rem;
+      -moz-column-gap: 0.5rem;
+      column-gap: 0.5rem;
+
+      @include lg {
+        -ms-flex-preferred-size: 15rem;
+        flex-basis: 15rem;
+      }
+
+      .logo-link {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 0.75rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        .logo-icon {
+          font-size: 2rem;
+        }
+
+        .logo-name {
+          color: var(--logo);
+          font-size: 1.625rem;
+          font-weight: 600;
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border-width: 0;
+
+          @include md {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+          }
+        }
+      }
+    }
+
+    .controls {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}

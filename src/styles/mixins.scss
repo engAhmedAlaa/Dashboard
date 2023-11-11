@@ -1,0 +1,41 @@
+@mixin xs {
+  @media (min-width: 30rem) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: 40rem) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: 48rem) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 64rem) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 80rem) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: 96rem) {
+    @content;
+  }
+}
+
+@mixin dark {
+  .dark & {
+    @content;
+  }
+}

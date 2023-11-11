@@ -1,0 +1,249 @@
+@import '../../../styles/mixins.scss';
+
+.rdp {
+  padding: 0.75rem;
+
+  .rdp-months {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    @include sm {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+
+    > :not([hidden]) ~ :not([hidden]) {
+      margin-top: 1rem;
+
+      @include sm {
+        margin-top: 0;
+        margin-left: 1rem;
+      }
+    }
+
+    .rdp-month {
+      > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 1rem;
+      }
+
+      .rdp-caption {
+        position: relative;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 0.375rem;
+        width: 18rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 0.5rem;
+
+        .rdp-caption_label {
+          font-size: 0.875rem;
+          font-weight: 500;
+        }
+
+        .rdp-caption_dropdowns {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+
+          .rdp-vhidden {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            margin: 0;
+            border: 0;
+            padding: 0;
+            width: 1px;
+            height: 1px;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            clip: rect(1px, 1px, 1px, 1px);
+          }
+
+          .rdp-select-trigger {
+            border: none;
+            height: 2.25rem;
+            font-weight: 500;
+
+            .arrow-down-icon {
+              display: none;
+            }
+          }
+        }
+
+        .rdp-nav {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          gap: 0.5rem;
+
+          .rdp-nav_button {
+            width: 2.25rem;
+            height: 2.25rem;
+            font-size: 1.5rem;
+
+            &:hover {
+              .rdp-nav_button-arrow-icon {
+                opacity: 1;
+              }
+            }
+
+            .rdp-nav_button-arrow-icon {
+              opacity: 0.5;
+              -webkit-transition: opacity var(--duration);
+              -o-transition: opacity var(--duration);
+              transition: opacity var(--duration);
+            }
+          }
+        }
+      }
+
+      .rdp-table {
+        border-collapse: collapse;
+        width: 100%;
+
+        .rdp-head {
+          .rdp-head_row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-bottom: 0.625rem;
+
+            > :not([hidden]) ~ :not([hidden]) {
+              margin-left: 0.375rem;
+            }
+
+            .rdp-head_cell {
+              border-radius: var(--radius-md);
+              width: 2.25rem;
+              color: var(--muted-foreground);
+              font-size: 0.8rem;
+              font-weight: normal;
+            }
+          }
+        }
+
+        .rdp-tbody {
+          > :not([hidden]) ~ :not([hidden]) {
+            margin-top: 0.375rem;
+          }
+
+          .rdp-row {
+            width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+
+            > :not([hidden]) ~ :not([hidden]) {
+              margin-left: 0.375rem;
+            }
+
+            .rdp-cell {
+              position: relative;
+              padding: 0;
+              font-size: 0.875rem;
+              text-align: center;
+
+              &:focus-within {
+                position: relative;
+                z-index: 20;
+              }
+
+              &:first-child:has([aria-selected]) {
+                border-top-left-radius: var(--radius-md);
+                border-bottom-left-radius: var(--radius-md);
+              }
+
+              &:last-child:has([aria-selected]) {
+                border-top-right-radius: var(--radius-md);
+                border-bottom-right-radius: var(--radius-md);
+              }
+
+              .rdp-day {
+                width: 2.25rem;
+                height: 2.25rem;
+                padding: 0;
+                font-weight: normal;
+
+                &[aria-selected] {
+                  opacity: 1;
+                }
+
+                &.rdp-day_outside {
+                  color: var(--muted-foreground);
+                  opacity: 0.5;
+                }
+
+                &.rdp-day_today {
+                  background-color: var(--accent);
+                  color: var(--accent-foreground);
+                }
+
+                &.rdp-day_selected {
+                  background-color: var(--primary);
+                  color: var(--primary-foreground);
+
+                  &:hover {
+                    background-color: var(--primary);
+                    color: var(--primary-foreground);
+                  }
+
+                  &:focus-visible {
+                    outline: 2px solid var(--primary);
+                    outline-offset: 2px;
+                  }
+                }
+
+                &.day-range_middle {
+                  &[aria-selected] {
+                    background-color: var(--accent);
+                    color: var(--accent-foreground);
+                  }
+                }
+
+                &.rdp-day_disabled {
+                  color: var(--muted-foreground);
+                  opacity: 0.5;
+                }
+
+                &.rdp-day_hidden {
+                  visibility: hidden;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.rdp-select-content {
+  .select-label {
+    text-transform: capitalize;
+  }
+}

@@ -1,0 +1,170 @@
+@import '../../styles/mixins.scss';
+
+.files {
+  .files-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+
+    @include md {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+
+    .section-files-items {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      display: -ms-grid;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+      gap: 1rem;
+
+      .file-item {
+        position: relative;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        -webkit-box-shadow: var(--shadow-sm);
+        box-shadow: var(--shadow-sm);
+
+        .main-info {
+          padding: 1.75rem;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          gap: 1.25rem;
+
+          &:hover {
+            .file-icon {
+              -webkit-transform: scale(1.1);
+              -ms-transform: scale(1.1);
+              transform: scale(1.1);
+            }
+          }
+
+          .file-icon {
+            font-size: 3.75rem;
+            -webkit-transition: -webkit-transform var(--duration);
+            transition: -webkit-transform var(--duration);
+            -o-transition: transform var(--duration);
+            transition: transform var(--duration);
+            transition: transform var(--duration),
+              -webkit-transform var(--duration);
+            cursor: pointer;
+          }
+
+          .file-name {
+            cursor: pointer;
+          }
+        }
+
+        .details-info {
+          padding: 0.75rem;
+          border-top: 1px solid var(--border);
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          color: var(--muted-foreground);
+          font-size: 0.875rem;
+        }
+      }
+
+      .download-button {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 1.375rem;
+      }
+    }
+
+    .section-statics {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      -webkit-box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-sm);
+
+      @include md {
+        -ms-flex-preferred-size: 350px;
+        flex-basis: 350px;
+      }
+
+      .section-title {
+        font-size: 1.375rem;
+        font-weight: 600;
+      }
+
+      .statics-items {
+        margin-top: 1.25rem;
+
+        > :not([hidden]) ~ :not([hidden]) {
+          margin-top: 1.25rem;
+        }
+
+        .statics-item {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          gap: 1rem;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+
+          .statics-icon {
+            font-size: 2.1875rem;
+            color: var(--primary);
+          }
+
+          .main-info {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+
+            .files-type {
+              font-weight: 500;
+            }
+
+            .files-number {
+              font-size: 0.875rem;
+              color: var(--muted-foreground);
+            }
+          }
+
+          .files-size {
+            margin-left: auto;
+            font-size: 0.875rem;
+          }
+        }
+      }
+
+      .upload-button {
+        margin-top: 1.25rem;
+        width: 100%;
+      }
+    }
+  }
+}

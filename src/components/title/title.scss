@@ -1,0 +1,20 @@
+.main-title {
+  position: relative;
+  margin-bottom: 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2rem;
+  font-weight: 700;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.375rem;
+    left: 0;
+    border-radius: var(--radius-md);
+    height: 0.1875rem;
+    width: 75%;
+    background-color: var(--primary);
+  }
+}

@@ -1,0 +1,191 @@
+.dropdown-menu-content,
+.dropdown-menu-sub-content {
+  overflow: hidden;
+  z-index: var(--z-xl);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.25rem;
+  min-width: 8rem;
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+  will-change: transform, opacity;
+
+  &[data-state='open'] {
+    --enter-opacity: 0;
+    --enter-scale: 0.95;
+    -webkit-animation: animate-in var(--duration-animate);
+    animation: animate-in var(--duration-animate);
+
+    &[data-side='top'] {
+      --enter-translate-y: 0.5rem;
+    }
+
+    &[data-side='right'] {
+      --enter-translate-x: -0.5rem;
+    }
+
+    &[data-side='bottom'] {
+      --enter-translate-y: -0.5rem;
+    }
+
+    &[data-side='left'] {
+      --enter-translate-x: 0.5rem;
+    }
+  }
+
+  &[data-state='closed'] {
+    --exit-opacity: 0;
+    --exit-scale: 0.95;
+    -webkit-animation: animate-out var(--duration-animate);
+    animation: animate-out var(--duration-animate);
+  }
+
+  .dropdown-menu-sub-trigger {
+    border-radius: var(--radius);
+    padding: 0.375rem 0.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    outline: none;
+    -webkit-transition: background-color var(--duration), color var(--duration);
+    -o-transition: background-color var(--duration), color var(--duration);
+    transition: background-color var(--duration), color var(--duration);
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:is(:focus, [data-state='open']) {
+      background-color: var(--accent);
+    }
+
+    &.inset {
+      padding-left: 2rem;
+    }
+
+    .arrow-right-icon {
+      margin-left: auto;
+      font-size: 1.5rem;
+    }
+  }
+
+  .dropdown-menu-item {
+    position: relative;
+    border-radius: var(--radius);
+    padding: 0.375rem 0.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 0.875rem;
+    outline: none;
+    -webkit-transition: background-color var(--duration), color var(--duration);
+    -o-transition: background-color var(--duration), color var(--duration);
+    transition: background-color var(--duration), color var(--duration);
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:focus {
+      background-color: var(--accent);
+      color: var(--accent-foreground);
+    }
+
+    &[data-disabled] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &.inset {
+      padding-left: 2rem;
+    }
+  }
+
+  .dropdown-menu-checkbox-item {
+    position: relative;
+    border-radius: var(--radius);
+    padding: 0.375rem 0.5rem 0.375rem 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 0.875rem;
+    outline: none;
+    -webkit-transition: background-color var(--duration), color var(--duration);
+    -o-transition: background-color var(--duration), color var(--duration);
+    transition: background-color var(--duration), color var(--duration);
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:focus {
+      background-color: var(--accent);
+      color: var(--accent-foreground);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .dropdown-menu-item-indicator-container {
+      position: absolute;
+      left: 0.5rem;
+      height: 0.875rem;
+      width: 0.875rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+
+      .check-icon {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .dropdown-menu-label {
+    padding: 0.375rem 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    &.inset {
+      padding-left: 0.5rem;
+    }
+  }
+
+  .dropdown-menu-separator {
+    margin: 0.25rem -0.25rem;
+    height: 1px;
+    background-color: var(--muted);
+  }
+}
+
+.dropdown-menu-content {
+  -webkit-box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md);
+}
+
+.dropdown-menu-sub-content {
+  -webkit-box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg);
+}

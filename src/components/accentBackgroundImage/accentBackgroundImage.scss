@@ -1,0 +1,56 @@
+@import '../../styles/mixins.scss';
+
+.accent-background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-md);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+
+  .image-parent {
+    width: 108rem;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+
+    .image {
+      width: 71.75rem;
+      -webkit-box-flex: 0;
+      -ms-flex: none;
+      flex: none;
+      max-width: none;
+
+      &.image-light {
+        display: block;
+        width: 71.75rem;
+
+        @include dark {
+          display: none;
+        }
+      }
+
+      &.image-dark {
+        display: none;
+        width: 90rem;
+
+        @include dark {
+          display: block;
+        }
+      }
+    }
+  }
+}

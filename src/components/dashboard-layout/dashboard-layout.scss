@@ -1,0 +1,36 @@
+@import '../../styles/mixins.scss';
+
+.dashboard-layout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  .content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .container {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+
+      @include lg {
+        grid-template-columns: 15rem minmax(0, 1fr);
+        gap: 2.5rem;
+      }
+
+      .main-content {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        display: flex;
+        flex-direction: column;
+
+        @include lg {
+          padding-top: 1.75rem;
+          padding-bottom: 1.75rem;
+        }
+      }
+    }
+  }
+}

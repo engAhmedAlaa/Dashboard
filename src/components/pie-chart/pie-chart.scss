@@ -1,0 +1,114 @@
+@import '../../styles/mixins.scss';
+
+.section-pie-chart {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  -webkit-box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm);
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .section-content {
+    margin-top: 1.25rem;
+
+    .section-content-chart {
+      height: 180px;
+
+      .recharts-responsive-container {
+        .recharts-layer {
+          &:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 2px;
+          }
+
+          .recharts-sector {
+            outline: none;
+          }
+        }
+
+        .tooltip {
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          padding: 0.5rem;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          background-color: var(--background);
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          gap: 0.125rem;
+          -webkit-box-shadow: var(--shadow-sm);
+          box-shadow: var(--shadow-sm);
+
+          .info-name {
+            color: var(--muted-foreground);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+          }
+
+          .info-value {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .section-content-info {
+      margin-top: 1.25rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      gap: 1.25rem;
+      font-size: 0.9375rem;
+
+      @include sm {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+      }
+
+      .info-container {
+        .info-name {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          font-weight: 500;
+          text-transform: capitalize;
+
+          .dot {
+            margin-right: 0.375rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+          }
+        }
+
+        .info-value {
+          margin-top: 0.25rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

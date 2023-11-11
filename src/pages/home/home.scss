@@ -1,0 +1,35 @@
+@import '../../styles/mixins.scss';
+
+.home {
+  .home-content {
+    > :not([hidden]) ~ :not([hidden]) {
+      margin-top: 1rem;
+    }
+
+    .line-charts {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: minmax(0, 1fr);
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1rem;
+
+      @include xs {
+        -ms-grid-columns: (minmax(0, 1fr)) [2];
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .bar-charts {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: minmax(0, 1fr);
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1rem;
+
+      @include md {
+        -ms-grid-columns: (minmax(0, 1fr)) [2];
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  }
+}
